@@ -1,0 +1,12 @@
+{
+  "name": "json-crud-console-poc",
+  "version": "1.0.0",
+  "description": "JSON 파일 기반 CRUD 콘솔 애플리케이션 PoC",
+  "type": "module",
+  "main": "src/cli.js",
+  "scripts": {
+    "start": "node src/cli.js",
+    "test": "node --test \"test/**/*.test.js\""
+  },
+  "license": "UNLICENSED"
+}
