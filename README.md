@@ -11,12 +11,12 @@ JSON 파일을 데이터 저장소로 사용하는 Create / Read / Update / Dele
 
 ## 요구 사항
 
-- Node.js 18 이상 (ESM, `node:test`, `fs/promises` 사용)
+- Python 3.9 이상 (표준 라이브러리만 사용)
 
 ## 실행 방법
 
 ```bash
-npm start
+python src/cli.py
 ```
 
 실행하면 콘솔 메뉴가 표시되며, 번호를 입력해 각 기능을 사용할 수 있습니다.
@@ -53,19 +53,19 @@ npm start
 ```
 .
 ├── src/
-│   ├── store.js   # JSON 파일 기반 CRUD 로직 (I/O와 분리되어 테스트 가능)
-│   └── cli.js     # 콘솔 메뉴 및 사용자 입출력 처리
+│   ├── store.py   # JSON 파일 기반 CRUD 로직 (I/O와 분리되어 테스트 가능)
+│   └── cli.py     # 콘솔 메뉴 및 사용자 입출력 처리
 ├── test/
-│   └── store.test.js
+│   └── test_store.py
 ├── data/
 │   └── db.json    # 실행 시 자동 생성되는 데이터 파일
-└── package.json
+└── README.md
 ```
 
 ## 테스트
 
 ```bash
-npm test
+python -m unittest discover -s test
 ```
 
-`node:test`와 `node:assert/strict`를 사용하며, 매 테스트마다 임시 디렉터리에 별도의 DB 파일을 생성하여 실제 데이터(`data/db.json`)에 영향을 주지 않습니다.
+매 테스트마다 임시 디렉터리에 별도의 DB 파일을 생성하여 실제 데이터(`data/db.json`)에 영향을 주지 않습니다.
